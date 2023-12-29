@@ -1,0 +1,38 @@
+import andy.*
+test "recordar el primero y último" {
+	andy.leer(latinAmerica)
+	andy.leer(hungerGames)
+	assert.equals(latinAmerica, andy.recuerdo(primero))
+	assert.equals(hungerGames, andy.recuerdo(ultimo))
+}
+
+test "olvidar el primero" {
+	andy.leer(hungerGames)
+	andy.leer(latinAmerica)
+	andy.olvido(primero)
+	assert.equals([latinAmerica], andy.coleccion())
+}
+
+
+
+test "El mejor es elPrincipito" {
+	andy.leer(lordOfRings)
+	andy.leer(elPrincipito)
+	assert.equals(elPrincipito, andy.elMejorLibro())
+}
+
+test "Buenos libros" {
+	andy.leer(lordOfRings)
+	andy.leer(elPrincipito)
+	andy.leer(hungerGames)
+	
+	assert.equals([elPrincipito], andy.buenosLibros())
+}
+
+test "Promedio" {
+	andy.leer(lordOfRings)
+	andy.leer(elPrincipito)
+	andy.leer(hungerGames)
+	
+	assert.equals(20, andy.promedio())
+}
